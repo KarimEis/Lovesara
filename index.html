@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بحب سارة ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #fce4ec;
+        }
+        h1 {
+            color: #e91e63;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options button {
+            background-color: #e91e63;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .options button:hover {
+            background-color: #ad1457;
+        }
+        .balloon-button {
+            background-color: #ff4081;
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 24px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        .balloon-button:before {
+            content: "❤️";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+        }
+        .balloon-button:hover {
+            background-color: #c51162;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>بحبك يا سارة ❤️</h1>
+    <div class="question">
+        <p>تخيلي يا حبيبتي أنا بحبك قد إيه؟</p>
+    </div>
+    <div class="options">
+        <button onclick="wrongAnswer()">قد البحر</button>
+        <button onclick="wrongAnswer()">سمكات البحر</button>
+        <button onclick="wrongAnswer()">جداً جامد</button>
+    </div>
+    <div id="result" class="hidden">
+        <a href="love.html" class="balloon-button" target="_blank">دوسي على ده علشان تعرفي أنا بحبك قد إيه</a>
+    </div>
+
+    <script>
+        let attempts = 0;
+
+        function wrongAnswer() {
+            attempts++;
+            if (attempts < 3) {
+                alert("لأ طبعًا! جربي تاني 😘");
+            } else {
+                document.querySelector(".options").classList.add("hidden");
+                document.getElementById("result").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>
